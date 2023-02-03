@@ -141,7 +141,7 @@ async fn main() -> Result<()> {
                 if !err.is_cancelled() {
                     tracing::error!("The proxy failed with {}.", err);
                 } else {
-                    eprintln!("Got error: {}", err);
+                    eprintln!("Got error: {err}");
                 }
             }
         }
