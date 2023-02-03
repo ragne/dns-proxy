@@ -1,0 +1,25 @@
+[package]
+name = "dns-proxy"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.68"
+async-trait = "0.1.64"
+clap = { version = "4.1.4", features = ["derive", "env"] }
+futures = "0.3.26"
+native-tls = "0.2.11"
+thiserror = "1.0.38"
+tokio = { version = "1.25.0", features = ["macros", "rt-multi-thread", "net", "signal", "sync"] }
+tokio-native-tls = "0.3.0"
+tracing = "0.1.37"
+tracing-subscriber = { version = "0.3.16", features = ["env-filter"]}
+trust-dns-proto = "0.22.0"
+
+[profile.release]
+opt-level = "z"
+lto = "thin"
+debug = false
+strip = true
