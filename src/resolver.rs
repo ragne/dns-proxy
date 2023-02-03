@@ -1,12 +1,11 @@
 use tokio_native_tls::{TlsConnector, TlsStream};
 
-use native_tls::TlsConnector as NativeTlsConnector;
-use tokio::net::{TcpSocket, TcpStream};
-use anyhow::Context;
-use std::net::SocketAddr;
-use anyhow::Result;
 use crate::TCP_TIMEOUT;
-
+use anyhow::Context;
+use anyhow::Result;
+use native_tls::TlsConnector as NativeTlsConnector;
+use std::net::SocketAddr;
+use tokio::net::{TcpSocket, TcpStream};
 
 /// Configuration for dns resolver
 #[derive(Debug)]
